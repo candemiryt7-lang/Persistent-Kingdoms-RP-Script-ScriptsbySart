@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 import socket
 import time
 import os
@@ -903,7 +903,9 @@ def main_request_handler(client, addr):
             text = string0.split(" ")[1:]
             if not any(("%" in text_part) for text_part in string0.split(" ")):
                 if string0[0] == "/":
-                    if command in ["yardim", "yardım", "help"]:
+                    if command == "test":
+                        send_message_warband(client, message_type["Message"], unique_id, colors["beyaz"], "deneme")
+                    elif command in ["yardim", "yardım", "help"]:
                         if len(text):
                             if text[0] == "help":
                                 send_message_warband(client, message_type["Message"], unique_id, colors["beyaz"], strings["/yardim help"])
